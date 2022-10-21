@@ -1,0 +1,234 @@
+:root{
+    --black: #263139;
+    --white: #ececec;
+    --orange: #f16535;
+    --grey: #8a8f92;
+    --secondOrange: #e37a52;
+}
+
+*,::after,::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+    font-family: Tahoma, Verdana, sans-serif;
+}
+body{
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    grid-template-rows: 10% 80% 10%;
+    overflow: hidden;
+}
+
+
+/* Header */
+header {
+    width: 100%;
+    height: 100%;
+    transition: all 1s;
+    animation: headerAnimation 4s linear;
+    animation-fill-mode: both;
+    animation-play-state: running;
+}
+header h1{
+    font-size: 6rem;
+    height: 100%;
+    text-align: center;
+    letter-spacing: 4px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+    
+}
+
+.hidden{
+    display: none;
+}
+@keyframes headerAnimation {
+    0%{
+        background-color: var(--white);
+        width: 0%;
+        transition: all 1s;
+        color: var(--black);
+    }
+    20%{
+        background-color: var(--white);
+        width: 20%;
+        transition: all 1s;
+        color: var(--black);
+    }
+    40%{
+        background-color: var(--white);
+        width: 40%;
+        transition: all 1s;
+    }
+    60%{
+        background-color: var(--grey);
+        transition: all 1s;
+        color: var(--orange);
+        width: 60%;
+    }
+    80%{
+        color: var(--orange);
+        background-color: var(--black);
+        transition: all 1s;
+        width: 80%;
+    }
+    100%{
+        background-color: var(--black);
+        transition: all 1s;
+        color: var(--orange);
+        width: 100%;
+    }
+}
+
+/* Footer */
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    animation: headerAnimation 4s linear;
+    animation-fill-mode: both;
+    animation-play-state: running;
+}
+footer p{
+    font-size: 2.5rem;
+    color: var(--orange);
+    transition: all 0.5s;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+a{
+    text-decoration: none;
+    color: var(--orange);
+    transition: all 0.5s;
+}
+footer p a:hover{
+    transform: translateX(25%);
+    transition: all 0.5s;
+    font-size: 4rem;
+}
+
+/* Main */
+main{
+    background-color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mainContainer{
+    width: 95%;
+    max-width: 412px;
+    height: 95%;
+    border-radius: 25px;
+    background-color: var(--black);
+    border: none;
+    outline: none;
+    display: grid;
+    grid-template-rows: 50% 50%;
+}
+.screenSec{
+    border-radius: 25px;
+    margin: 1rem 1rem 0 1rem;
+    color: var(--white);
+    display: grid;
+    grid-template-rows: 85% 15%;
+    font-size: 3.4rem;
+}
+
+.upperpart{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 0 3.5rem 1.5rem 1rem;
+    font-size: 2.5rem;
+    color: var(--grey);
+}
+.lowerPart{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 0 3.5rem 1.5rem 1rem;
+}
+
+
+
+.pad{
+    background-color: var(--black);
+    margin: 0 1rem 1rem 1rem;
+    filter: brightness(1.75);
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    display: grid;
+    grid-template-rows: 80% 20%;
+}
+.mainGrid{
+    padding: 1rem 1rem 0 1rem;
+    display: grid;
+    grid-template-rows: repeat(5, 20%);
+    grid-template-columns: repeat(4, 25%);
+}
+.lastGrid{
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 25% 25% 50%;
+}
+.btn{
+    background: transparent;
+    font-size: 2.5rem;
+    margin: 0.1rem;
+    border: none;
+    border-radius: 12px;
+    filter: brightness(0.5);
+    color: var(--orange);
+    transition: all 0.2s;
+}
+.lastGrid #equalBtn i{
+    width: 60%;
+    height: 90%;
+    margin-left: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--orange);
+    color: var(--black);
+    border-radius: 12px;
+    background-color: var(--secondOrange);
+}
+.btn:hover{
+    background-color: var(--grey);
+    transition: all 0.2s;
+    transform: scale(1.1);
+    color: var(--orange);
+}
+#equalBtn:hover{
+    background: transparent;
+}
+.hidden2{
+    display: none;
+}
+
+
+/* Media Querys */
+@media (max-width: 600px) {
+    header h1{
+        font-size: 5em;
+        transition: all 0.5s;
+    }
+    footer p{
+        font-size: 2rem;
+        transition: all 0.5s;
+    }
+}
